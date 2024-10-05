@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candlestick Chart</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <h2>Stock Candlestick Chart</h2>
+    <div id="chart" style="width:100%;height:600px;"></div>
+
+    <script>
+        var trace1 = {
+            x: ['2023-10-01', '2023-10-02', '2023-10-03', '2023-10-04', '2023-10-05'],  // Replace with your date data
+            open: [2.64, 2.645, 2.645, 2.635, 2.65],   // Replace with your open prices
+            high: [2.7, 2.705, 2.705, 2.695, 2.71],   // Replace with your high prices
+            low: [2.64, 2.645, 2.645, 2.635, 2.65],   // Replace with your low prices
+            close: [2.6783, 2.6719, 2.6719, 2.6719, 2.6675],   // Replace with your close prices
+            type: 'candlestick',
+            xaxis: 'x',
+            yaxis: 'y'
+        };
+
+        var layout = {
+            dragmode: 'zoom',
+            title: 'USD/GEL Candlestick Chart',
+            xaxis: {
+                title: 'Date',
+                rangeslider: { visible: false }
+            },
+            yaxis: { title: 'Price' }
+        };
+
+        var data = [trace1];
+        Plotly.newPlot('chart', data, layout);
+    </script>
+</body>
+</html>
